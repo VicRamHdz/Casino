@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unity:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:unity="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+    x:Class="Cheeteye.App">
+	<unity:PrismApplication.Resources>
+		<!-- Application resource dictionary -->
+          <ResourceDictionary>
+            <Color x:Key="DarkBackgroundColorPage">#0C0C0C</Color>
+            <Color x:Key="PrimaryTextColor">#FFC350</Color>
+            <Color x:Key="LightTextColor">#FFFFFF</Color>
+            <Color x:Key="LightBackgroundColor">#222222</Color>
+            <!--NavTitle-->
+            <Color x:Key="TitleNavTextColor">#C8102E</Color>
+            <!--Primary Buttons-->
+            <Color x:Key="ButtonStartBackColor">#A9062A</Color>
+            <Color x:Key="ButtonEndBackColor">#EA214F</Color>
+            <!--Primary Transparent Buttons-->
+            <Color x:Key="ButtonStartTransBackColor">#66000000</Color>
+            <Color x:Key="ButtonEndTransBackColor">#66000000</Color>
+            <!--Secondary Buttons-->
+            <Color x:Key="ButtonStartSecondBackColor">#66000000</Color>
+            <Color x:Key="ButtonEndSecondBackColor">#66000000</Color>
+            <!--Base Color-->
+            <Color x:Key="BasePrimaryStartBackColor">#A9062A</Color>
+            <Color x:Key="BasePrimaryEndBackColor">#EA214F</Color>
+            <!--Base Gray Color-->
+            <Color x:Key="BaseGrayStartBackColor">#343434</Color>
+            <Color x:Key="BaseGrayEndBackColor">#1F1F1F</Color>
+            <!--TabButtons-->
+            <Color x:Key="ButtonTabStartBackColor">#DA1A32</Color>
+            <Color x:Key="ButtonTabEndBackColor">#750012</Color>
+            <Color x:Key="ButtonTabStartActiveBackColor">#750012</Color>
+            <Color x:Key="ButtonTabEndActiveBackColor">#DA1A32</Color>
+            
+            <Color x:Key="OutlineColor">#FFC350</Color>
+            <Color x:Key="DividerGrayColor">#B0B0B0</Color>
+            <Color x:Key="TransparentBackgroundColor">#66000000</Color>
+            <Color x:Key="TransparentYellowBackgroundColor">#66FFC350</Color>
+            <Style x:Key="TitleLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>SpectralSC-Medium</OnPlatform.iOS>
+                            <OnPlatform.Android>Fonts/SpectralSC-Medium.ttf#SpectralSC-Medium</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryTextColor}"/>
+                <Setter Property="FontSize" Value="25" />
+            </Style>
+            <Style x:Key="NormalLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>RobotoCondensed-Bold</OnPlatform.iOS>
+                            <OnPlatform.Android>Fonts/RobotoCondensed-Bold.ttf#RobotoCondensed-Bold</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="BoldLabelStyle" TargetType="Label">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>RobotoCondensed-Bold</OnPlatform.iOS>
+                            <OnPlatform.Android>Fonts/RobotoCondensed-Bold.ttf#RobotoCondensed-Bold</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="NormalButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>BEBAS</OnPlatform.iOS>
+                            <OnPlatform.Android>Fonts/BEBAS.ttf#BEBAS</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="BoldButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>BEBAS</OnPlatform.iOS>
+                            <OnPlatform.Android>Fonts/BEBAS.ttf#BEBAS</OnPlatform.Android>
+                        </OnPlatform>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="TextColor" Value="{StaticResource LightTextColor}"/>
+                <Setter Property="FontSize" Value="18" />
+            </Style>
+            <Style x:Key="BoldPickerStyle" TargetType="Picker">
+                <Setter Property="TextColor" Value="{StaticResource ButtonStartBackColor}"/>
+            </Style>
+            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"></ffimageloadingsvg:SvgImageSourceConverter>
+            <ControlTemplate x:Key="CustomNavigationTemplate" 
+                xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms">
+                <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" 
+                      ColumnSpacing="0" RowSpacing="0">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="8*"/>
+                    <RowDefinition Height="92*"/>
+                  </Grid.RowDefinitions>
+
+                  <!--Header-->
+                  <Grid Grid.Column="0" Grid.Row="0" ColumnSpacing="0" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="80*"/>
+                        <ColumnDefinition Width="10*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout Grid.Column="0" HeightRequest="33" WidthRequest="33"
+                                 VerticalOptions="Center" Orientation="Horizontal">
+                        <!--<ffimageloadingsvg:SvgCachedImage 
+                                WidthRequest="20" HeightRequest="20" HorizontalOptions="Center"
+                                VerticalOptions="Center" BindingContext="{TemplateBinding BindingContext}" Aspect="AspectFit"
+                                Source = "{Binding BackIcon, Converter={StaticResource SvgImageSourceConverter}}"
+                        />-->
+                             <ffimageloading:CachedImage WidthRequest="23" HeightRequest="23" HorizontalOptions="Center"
+                            DownsampleToViewSize="true" Aspect="AspectFit" BindingContext="{TemplateBinding BindingContext}"
+                            Source = "{Binding BackIcon}"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer BindingContext="{TemplateBinding BindingContext}"
+                                Command="{Binding BackCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout.Margin>
+                            <OnPlatform x:TypeArguments="Thickness" Android="10,0,0,0" iOS ="10,0,0,0" />
+                        </StackLayout.Margin>   
+                    </StackLayout>   
+
+                     <Label Grid.Column="1" BindingContext="{TemplateBinding BindingContext}"
+                            Text="{Binding Title}" FontSize="19" FontAttributes="Bold" 
+                            TextColor="{StaticResource TitleNavTextColor}"
+                            HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                            <Label.FontFamily>
+                                 <OnPlatform x:TypeArguments="x:String">
+                                    <OnPlatform.iOS>BEBAS</OnPlatform.iOS>
+                                    <OnPlatform.Android>Fonts/BEBAS.ttf#BEBAS</OnPlatform.Android>
+                                </OnPlatform>
+                            </Label.FontFamily>
+                    </Label>
+
+                    <StackLayout Grid.Column="2" VerticalOptions="Center" Orientation="Horizontal">
+                        <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="18" HeightRequest="18"
+                            BindingContext="{TemplateBinding BindingContext}"
+                            Source = "{Binding RightIcon, Converter={StaticResource SvgImageSourceConverter}}" Margin="1,0,0,0"/>-->
+                            <ffimageloading:CachedImage WidthRequest="20" HeightRequest="20" HorizontalOptions="Center"
+                            DownsampleToViewSize="true" Aspect="AspectFit" BindingContext="{TemplateBinding BindingContext}"
+                            Source = "{Binding RightIcon}"/>
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer BindingContext="{TemplateBinding BindingContext}"
+                                Command="{Binding RightCommand}"/>
+                        </StackLayout.GestureRecognizers>
+                        <StackLayout.Margin>
+                            <OnPlatform x:TypeArguments="Thickness" Android="0,0,10,0" />
+                        </StackLayout.Margin>   
+                    </StackLayout> 
+                        
+                  </Grid>
+                    
+                  <!-- Content -->
+                  <ContentPresenter Grid.Column="0" Grid.Row="1" 
+                        VerticalOptions="FillAndExpand" 
+                        HorizontalOptions="FillAndExpand" />
+                  <Grid.Margin>
+                    <OnPlatform x:TypeArguments="Thickness" iOS ="0,18,0,0" />
+                  </Grid.Margin>
+                </Grid>
+            </ControlTemplate>
+          </ResourceDictionary>
+	</unity:PrismApplication.Resources>
+</unity:PrismApplication>

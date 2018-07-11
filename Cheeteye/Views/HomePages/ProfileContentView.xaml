@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             x:Class="Cheeteye.Views.ProfileContentView">
+    <ContentView.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="15*" />
+                    <RowDefinition Height="70*" />
+                </Grid.RowDefinitions>
+                <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="3"
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand" Aspect="AspectFill"
+                        Source = "backgroundApp.png"/>
+                
+                <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand" Aspect="AspectFill"
+                        Source = "headerBling.png"/>
+
+                <StackLayout Spacing="0" Margin="0,20,0,0" Grid.Row="2">
+                    <Label Text="YOUR PROFILE" Style="{StaticResource TitleLabelStyle}" HorizontalTextAlignment="Center" />
+
+                    <!--Personal Details-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,20,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Personal Details" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                            Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                            Source = "uiNext.png"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PersonalDetailCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.5" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <!--Settings-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Settings" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                            Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                            Source = "uiNext.png"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SettingsCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                    </controls:CustomFrame>
+
+                    <!--Logout-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Logout" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                            Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                            Source = "uiNext.png"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LogoutCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.5" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

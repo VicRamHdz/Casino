@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:controls="clr-namespace:Cheeteye.Controls"
+    BackgroundColor="{StaticResource DarkBackgroundColorPage}"
+    x:Class="Cheeteye.Views.SpecialsContentView">
+	<ContentView.Content>
+        <ScrollView>
+            <Grid Margin="0,20,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+                            DownsampleToViewSize="true" Aspect="AspectFill" HeightRequest="70" WidthRequest="110"
+                            Source = "logo.png"/>
+                </StackLayout>
+                <StackLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Grid RowSpacing="0" Margin="20,10,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "special1.png"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}">
+                            <Label Text="Save to calendar" Margin="5,0,0,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                            <Label Text="Book now" Margin="0,0,5,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid RowSpacing="0" Margin="20,10,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "special2.png"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}">
+                            <Label Text="Save to calendar" Margin="5,0,0,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                            <Label Text="Book now" Margin="0,0,5,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid RowSpacing="0" Margin="20,10,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "special3.png"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}">
+                            <Label Text="Save to calendar" Margin="5,0,0,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                            <Label Text="Book now" Margin="0,0,5,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid RowSpacing="0" Margin="20,10,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "special4.png"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}">
+                            <Label Text="Save to calendar" Margin="5,0,0,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                            <Label Text="Book now" Margin="0,0,5,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                        </StackLayout>
+                    </Grid>
+
+                    <Grid RowSpacing="0" Margin="20,10,20,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "special5.png"/>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1" BackgroundColor="{StaticResource LightBackgroundColor}">
+                            <Label Text="Save to calendar" Margin="5,0,0,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                            <Label Text="Book now" Margin="0,0,5,0" FontSize="14" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center" TextColor="{StaticResource PrimaryTextColor}" />
+                        </StackLayout>
+                    </Grid>
+                    
+                </StackLayout>
+            </Grid>
+    </ScrollView>
+	</ContentView.Content>
+</ContentView>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.ChallengeDetailsPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0">
+            <ScrollView>
+                <StackLayout>
+                    <Grid RowSpacing="0" Margin="20,20,20,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "{Binding Challenge.BannerUrl}"/>
+
+                        <Grid Grid.Row="1" BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <BoxView HorizontalOptions="FillAndExpand" Grid.Row="0"
+                                 Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                            <StackLayout Orientation="Vertical" Grid.Row="1" Margin="15" VerticalOptions="Center">
+                                <Label Text="{Binding Challenge.Details}" Style="{StaticResource BoldLabelStyle}" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                <!--<Label Text="When you arrived to the Bucky's Casino," Style="{StaticResource BoldLabelStyle}" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                <Label Text="click the checkin button to let us" Style="{StaticResource BoldLabelStyle}" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                <Label Text="know you're here. Checkin 5 times" Style="{StaticResource BoldLabelStyle}" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black"/>
+                                <Label Text="and Earn 500 points!" Style="{StaticResource BoldLabelStyle}" FontSize="18" HorizontalTextAlignment="Center" TextColor="Black"/>-->
+
+                                <Label Text="DAYS CHECKED IN" Style="{StaticResource BoldLabelStyle}" FontSize="14" HorizontalTextAlignment="Center" TextColor="Black"/>
+
+                                <StackLayout Spacing="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"
+                                    DownsampleToViewSize="true" Aspect="Fill" Source = "uiOne.png"/>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"
+                                    DownsampleToViewSize="true" Aspect="Fill" Source = "uiTwo.png"/>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"
+                                    DownsampleToViewSize="true" Aspect="Fill" Source = "uiThree.png"/>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"
+                                    DownsampleToViewSize="true" Aspect="Fill" Source = "uiFour.png"/>
+                                    <ffimageloading:CachedImage HorizontalOptions="Center" HeightRequest="30" WidthRequest="30"
+                                    DownsampleToViewSize="true" Aspect="Fill" Source = "uiFive.png"/>
+                                </StackLayout>
+                                
+                                <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                                <!--<Label Text="05 May 2018, 7-10 pm" Style="{StaticResource BoldLabelStyle}" 
+                                       TextColor="{StaticResource ButtonStartBackColor}" FontSize="15"/>-->
+                                <Label Text="{Binding Challenge.Footer}" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Center" TextColor="Black" FontSize="16"/>
+                                <!--<Label Text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus."
+                                       Style="{StaticResource NormalLabelStyle}" TextColor="Black" FontSize="16"/>-->
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>  
+            <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                <controls:CustomGradientButton Text="CHECKIN NOW" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0" 
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding CheckInCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.NotificationsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Margin="0,20,0,0" Grid.Row="2">
+                    
+                    <!--Promotions-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,20,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Promotions" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <controls:CustomSwitch IsToggled="{Binding IsPromotions}" TintColor="{StaticResource OutlineColor}" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PromotionsCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.3" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <!--Challenge Updates-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" StrokeThickness="0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Challenge Updates" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <controls:CustomSwitch IsToggled="{Binding IsUpdates}" TintColor="{StaticResource OutlineColor}" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding UpdatesCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                    </controls:CustomFrame>
+
+                    <!--New Tier Reached-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="New Tier Reached" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <controls:CustomSwitch IsToggled="{Binding IsTier}" TintColor="{StaticResource OutlineColor}" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TierCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.25" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <!--Reminders-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Reminders" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <controls:CustomSwitch IsToggled="{Binding IsReminders}" TintColor="{StaticResource OutlineColor}" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RemindersCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.25" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

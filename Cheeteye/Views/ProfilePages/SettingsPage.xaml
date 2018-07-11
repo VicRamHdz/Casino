@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.SettingsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0" Margin="0,20,0,0" Grid.Row="2">
+                    
+                    <!--Change Password-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,20,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Change Password" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                            Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                            Source = "uiNext.png"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PersonalDetailCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.3" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <!--Notifications-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" StrokeThickness="0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Notifications" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                            Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                            Source = "uiNext.png"/>
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NotificationsCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                    </controls:CustomFrame>
+
+                    <!--Languages-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="Languages" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" VerticalOptions="Center"/>
+                            <controls:CustomPicker Title="Select language" Style="{StaticResource BoldPickerStyle}"
+                            ItemsSource="{Binding Languages}" TextAlignment="Right"
+                            ItemDisplayBinding="{Binding Language}" VerticalOptions="Center"
+                            SelectedItem="{Binding SelectedLanguage}" SetFocus="{Binding SetFocusLanguage}"
+                            HorizontalOptions="End" WidthRequest="80"
+                            />
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LanguagesCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.25" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <!--User Time Zone-->
+                    <controls:CustomFrame HorizontalOptions="FillAndExpand" HeightRequest="50"
+                        Padding="10" Margin="-2,0,-2,0" HasBorder="true" OutlineColor="{StaticResource DividerGrayColor}"
+                        BackgroundColor="{StaticResource TransparentBackgroundColor}">
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="User Time Zone" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                            <controls:CustomPicker Title="Select Time Zone" Style="{StaticResource BoldPickerStyle}"
+                                ItemsSource="{Binding TimeZones}" TextAlignment="Right"
+                                ItemDisplayBinding="{Binding TimeZoneName}" VerticalOptions="Center"
+                                SelectedItem="{Binding SelectedTimeZone}" SetFocus="{Binding SetFocusTimeZone}"
+                                HorizontalOptions="End" WidthRequest="80"
+                            />
+                        </StackLayout>
+                        <controls:CustomFrame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding TimeZoneCommand}" />
+                        </controls:CustomFrame.GestureRecognizers>
+                        <controls:CustomFrame.StrokeThickness>
+                            <OnPlatform x:TypeArguments="x:Double" Android="2" iOS ="0.25" />
+                        </controls:CustomFrame.StrokeThickness>
+                    </controls:CustomFrame>
+
+                    <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                    <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                    <controls:CustomGradientButton Text="SAVE" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0" 
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding SaveCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

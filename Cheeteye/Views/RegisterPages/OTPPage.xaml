@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:help="clr-namespace:Cheeteye.Helpers"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             xmlns:behaviors="clr-namespace:Cheeteye.Behaviors"
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.OTPPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="15" VerticalOptions="FillAndExpand">
+                    <Label Text="Check your Email" Style="{StaticResource BoldLabelStyle}" Margin="0,15,0,0" HorizontalTextAlignment="Center"/>
+                    <Label Text="We've sent a confirmation code to" Style="{StaticResource NormalLabelStyle}"  HorizontalTextAlignment="Center"/>
+                    <Label FormattedText="{Binding Email, Converter={help:LabelValueFormatConverter},
+                           ConverterParameter='END|. Please enter bellow.'}"
+                           Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Center">
+                    </Label>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center"
+                                 Padding="5,40,5,0" Spacing="5">
+                        <!--Code 1-->
+                        <controls:CustomFrame OutlineColor="{Binding CodeOneBorderColor}" CornerRadius="3" HasBorder="true"
+                                              WidthRequest="70" HeightRequest="65" HasShadow="false" Padding="5" 
+                                              StartColor="{StaticResource TransparentBackgroundColor}" 
+                                              EndColor="{StaticResource TransparentBackgroundColor}">
+                            <controls:CustomEntry Text="{Binding CodeOne}"
+                                   TextColor="{StaticResource LightTextColor}" FontAttributes="Bold"
+                                   Keyboard="Numeric" FontSize="30" HorizontalOptions="FillAndExpand" 
+                                   VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center">
+                                <controls:CustomEntry.Behaviors>
+                                    <b:EventToCommandBehavior EventName="Focused" 
+                                      Command="{Binding CodeFocusCommand}" CommandParameter="1" />
+                                    <b:EventToCommandBehavior EventName="Unfocused" 
+                                      Command="{Binding CodeUnFocusCommand}" CommandParameter="1" />
+                                    <b:EventToCommandBehavior EventName="TextChanged" 
+                                      Command="{Binding CodeOneTextChangedCommand}"/>
+                                    <behaviors:NumericBehavior MaxLength="1"/>
+                                </controls:CustomEntry.Behaviors>
+                            </controls:CustomEntry>
+                            <controls:CustomFrame.StrokeThickness>
+                                <OnPlatform x:TypeArguments="x:Double" Android="5" iOS ="1" />
+                            </controls:CustomFrame.StrokeThickness>
+                        </controls:CustomFrame>
+
+                        <!--Code 2-->
+                        <controls:CustomFrame OutlineColor="{Binding CodeTwoBorderColor}" CornerRadius="3" HasBorder="true"
+                                              WidthRequest="70" HeightRequest="65" HasShadow="false" Padding="5" 
+                                              StartColor="{StaticResource TransparentBackgroundColor}" 
+                                              EndColor="{StaticResource TransparentBackgroundColor}">
+                            <controls:CustomEntry Text="{Binding CodeTwo}" SetFocus="{Binding SetFocusCodeTwo}" 
+                                                  TextColor="{StaticResource LightTextColor}" FontAttributes="Bold"
+                                                  Keyboard="Numeric" FontSize="30" HorizontalOptions="FillAndExpand" 
+                                                  VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center">
+                                <controls:CustomEntry.Behaviors>
+                                    <b:EventToCommandBehavior EventName="Focused" 
+                                      Command="{Binding CodeFocusCommand}" CommandParameter="2" />
+                                    <b:EventToCommandBehavior EventName="Unfocused" 
+                                      Command="{Binding CodeUnFocusCommand}" CommandParameter="2" />
+                                    <b:EventToCommandBehavior EventName="TextChanged" 
+                                      Command="{Binding CodeTwoTextChangedCommand}"/>
+                                    <behaviors:NumericBehavior MaxLength="1"/>
+                                </controls:CustomEntry.Behaviors>
+                            </controls:CustomEntry>
+                            <controls:CustomFrame.StrokeThickness>
+                                <OnPlatform x:TypeArguments="x:Double" Android="5" iOS ="1" />
+                            </controls:CustomFrame.StrokeThickness>
+                        </controls:CustomFrame>
+
+                        <!--Code 3-->
+                        <controls:CustomFrame OutlineColor="{Binding CodeThreeBorderColor}" CornerRadius="3" HasBorder="true"
+                                              WidthRequest="70" HeightRequest="65" HasShadow="false" Padding="5" 
+                                              StartColor="{StaticResource TransparentBackgroundColor}" 
+                                              EndColor="{StaticResource TransparentBackgroundColor}">
+                            <controls:CustomEntry Text="{Binding CodeThree}" SetFocus="{Binding SetFocusCodeThree}"
+                                                  TextColor="{StaticResource LightTextColor}" FontAttributes="Bold"
+                                                  Keyboard="Numeric" FontSize="30" HorizontalOptions="FillAndExpand" 
+                                                  VerticalOptions="FillAndExpand" HorizontalTextAlignment="Center">
+                                <controls:CustomEntry.Behaviors>
+                                    <b:EventToCommandBehavior EventName="Focused" 
+                                      Command="{Binding CodeFocusCommand}" CommandParameter="3" />
+                                    <b:EventToCommandBehavior EventName="Unfocused" 
+                                      Command="{Binding CodeUnFocusCommand}" CommandParameter="3" />
+                                    <b:EventToCommandBehavior EventName="TextChanged" 
+                                      Command="{Binding CodeThreeTextChangedCommand}"/>
+                                    <behaviors:NumericBehavior MaxLength="1"/>
+                                </controls:CustomEntry.Behaviors>
+                            </controls:CustomEntry>
+                            <controls:CustomFrame.StrokeThickness>
+                                <OnPlatform x:TypeArguments="x:Double" Android="5" iOS ="1" />
+                            </controls:CustomFrame.StrokeThickness>
+                        </controls:CustomFrame>
+
+                        <!--Code 4-->
+                        <controls:CustomFrame OutlineColor="{Binding CodeFourBorderColor}" CornerRadius="3" HasBorder="true"
+                                              WidthRequest="70" HeightRequest="65" HasShadow="false" Padding="5" 
+                                              StartColor="{StaticResource TransparentBackgroundColor}" 
+                                              EndColor="{StaticResource TransparentBackgroundColor}">
+                            <controls:CustomEntry Text="{Binding CodeFour}" SetFocus="{Binding SetFocusCodeFour}" 
+                                                  TextColor="{StaticResource LightTextColor}" FontAttributes="Bold"
+                                                  Keyboard="Numeric" FontSize="30" HorizontalOptions="FillAndExpand" 
+                                                  VerticalOptions="FillAndExpand"
+                                   HorizontalTextAlignment="Center">
+                                <controls:CustomEntry.Behaviors>
+                                    <b:EventToCommandBehavior EventName="Focused" 
+                                      Command="{Binding CodeFocusCommand}" CommandParameter="4" />
+                                    <b:EventToCommandBehavior EventName="Unfocused" 
+                                      Command="{Binding CodeUnFocusCommand}" CommandParameter="4" />
+                                    <behaviors:NumericBehavior MaxLength="1"/>
+                                </controls:CustomEntry.Behaviors>
+                            </controls:CustomEntry>
+                            <controls:CustomFrame.StrokeThickness>
+                                <OnPlatform x:TypeArguments="x:Double" Android="5" iOS ="1" />
+                            </controls:CustomFrame.StrokeThickness>
+                        </controls:CustomFrame>
+                        
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                    <Label Text="Resend code" Style="{StaticResource BoldLabelStyle}" Margin="0,0,0,20" 
+                           TextColor="{StaticResource ButtonStartBackColor}" HorizontalOptions="Center" 
+                           VerticalOptions="EndAndExpand"/>
+                    <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                    <controls:CustomGradientButton Text="VERIFY" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0" 
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding VerifyCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

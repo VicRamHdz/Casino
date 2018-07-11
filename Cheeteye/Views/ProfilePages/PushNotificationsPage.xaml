@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.PushNotificationsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Margin="20">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Push Notifications" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                    <Label Text="OFF" Style="{StaticResource NormalLabelStyle}" HorizontalTextAlignment="End" HorizontalOptions="End"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="To enable notifications, go to " Style="{StaticResource NormalLabelStyle}" FontSize="16"/>
+                    <Label Text="settings" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" FontSize="16">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SettingsCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

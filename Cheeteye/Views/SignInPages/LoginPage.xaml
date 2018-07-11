@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:controls="clr-namespace:Cheeteye.Controls"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:Class="Cheeteye.Views.LoginPage"
+    ControlTemplate="{StaticResource CustomNavigationTemplate}"
+    BackgroundImage="backgroundApp">
+	<ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="20,30,20,20">
+                    <Label Text="Email Address" Style="{StaticResource NormalLabelStyle}" 
+                           Margin="0,20,0,0" TextColor="{StaticResource PrimaryTextColor}"/>
+                    <Entry Text="{Binding Email}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="18" HorizontalOptions="FillAndExpand" Keyboard="Email" HeightRequest="40" />
+                    
+                    <Label Text="Password" Style="{StaticResource NormalLabelStyle}" 
+                           Margin="0,20,0,0" TextColor="{StaticResource PrimaryTextColor}"/>
+                    <Entry Text="{Binding Password}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="18" IsPassword="true" HorizontalOptions="FillAndExpand" Keyboard="Text" HeightRequest="40" />
+                </StackLayout>
+                <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Label Text="Forgot your password?" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                    <controls:CustomGradientButton Text="LOGIN" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0"
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding SignInCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+	</ContentPage.Content>
+</ContentPage>

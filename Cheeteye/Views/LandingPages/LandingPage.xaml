@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundLoading"
+             x:Class="Cheeteye.Views.LandingPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="55*" />
+                    <RowDefinition Height="45*" />
+                </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" 
+                                 HorizontalOptions="FillAndExpand" 
+                                 VerticalOptions="End">
+                        <ffimageloading:CachedImage HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="End" WidthRequest="90" HeightRequest="150"
+                            DownsampleToViewSize="true" Aspect="AspectFit"
+                            Source = "logo.png"/>
+                    </StackLayout>
+                    <StackLayout Margin="10" Grid.Row="1"
+                                 HorizontalOptions="FillAndExpand" Spacing="10"
+                                 VerticalOptions="End">
+                        <controls:CustomGradientButton 
+                                Text="LOGIN" 
+                                TextColor="{StaticResource LightTextColor}" 
+                                Style="{StaticResource BoldButtonStyle}"
+                                HasBorder="true"
+                                StartColor="{StaticResource ButtonStartTransBackColor}" 
+                                EndColor="{StaticResource ButtonEndTransBackColor}" 
+                                BorderColor="{StaticResource OutlineColor}"
+                                HeightRequest="55" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}">
+                            <controls:CustomGradientButton.BorderWidth>
+                                <OnPlatform x:TypeArguments="x:Double" Android="3" iOS="0.5"  />
+                            </controls:CustomGradientButton.BorderWidth>
+                        </controls:CustomGradientButton>
+                        <controls:CustomGradientButton 
+                                Text="REGISTER" 
+                                TextColor="{StaticResource LightTextColor}"
+                                Style="{StaticResource BoldButtonStyle}"
+                                StartColor="{StaticResource ButtonStartSecondBackColor}" 
+                                EndColor="{StaticResource ButtonEndSecondBackColor}"
+                                HeightRequest="50" HorizontalOptions="FillAndExpand" Command="{Binding RegisterCommand}" />
+                    </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

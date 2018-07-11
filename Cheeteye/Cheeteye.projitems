@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{3F21549B-FA20-4525-BA9B-A401E2BB3C87}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Cheeteye</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SignInPages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\ChallengesContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\SpecialsContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\RewardsContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\LandingPages\LandingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RegisterPages\MembershipPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RegisterPages\OTPPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\RegisterPages\CreatePasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SignInPages\ForgotPasswordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\ProfileContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ProfilePages\ProfileDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ProfilePages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ProfilePages\NotificationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ProfilePages\PushNotificationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomePages\EventsContentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\EventsPages\EventDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\ChallengesPages\ChallengeDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignInPages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomGradientButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignInViewModels\LoginPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SharedViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ResponseResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomTabPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\HomePageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\ChallengesContentView.xaml.cs">
+      <DependentUpon>ChallengesContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\ChallengesContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomFrame.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\SpecialsContentView.xaml.cs">
+      <DependentUpon>SpecialsContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\SpecialsContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\RewardsContentView.xaml.cs">
+      <DependentUpon>RewardsContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\RewardsContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LandingPages\LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LandingPagesViewModels\LandingPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterPages\MembershipPage.xaml.cs">
+      <DependentUpon>MembershipPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterPagesViewModels\MembershipPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterPages\OTPPage.xaml.cs">
+      <DependentUpon>OTPPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterPagesViewModels\OTPPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\LabelValueFormatConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Behaviors\NumericBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomEntry.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\RegisterPages\CreatePasswordPage.xaml.cs">
+      <DependentUpon>CreatePasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegisterPagesViewModels\CreatePasswordPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validators\EmailValidator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Validators\NullValidators.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\SignInPages\ForgotPasswordPage.xaml.cs">
+      <DependentUpon>ForgotPasswordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SignInViewModels\ForgotPasswordPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\ProfileContentView.xaml.cs">
+      <DependentUpon>ProfileContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\ProfileContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePages\ProfileDetailsPage.xaml.cs">
+      <DependentUpon>ProfileDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModels\ProfileDetailsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModels\SettingsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePages\NotificationsPage.xaml.cs">
+      <DependentUpon>NotificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModels\NotificationsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomSwitch.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ProfilePages\PushNotificationsPage.xaml.cs">
+      <DependentUpon>PushNotificationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModels\PushNotificationsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LanguageModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CustomPicker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomePages\EventsContentView.xaml.cs">
+      <DependentUpon>EventsContentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\EventsContentViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Effects\ShadowEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EventsPages\EventDetailsPage.xaml.cs">
+      <DependentUpon>EventDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EventsPages\EventDetailsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\ChallengesPages\ChallengeDetailsPage.xaml.cs">
+      <DependentUpon>ChallengeDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ChallengesPagesViewModels\ChallengeDetailsPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\UserService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BaseProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BadRequestResponseResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EnrollResponseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MembershipModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfileInfoModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\EventsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EventsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\CustomCrashReportService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\IDeviceInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\GeoLocationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TimeZoneModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DependencyServices\ICalendarInformation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NotificationsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\NotificationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ChallengesService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ChallengesModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\SignInPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Controls\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\SignInViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\SharedViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\HomePages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\HomePagesViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\LandingPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\LandingPagesViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\RegisterPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\RegisterPagesViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Behaviors\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Validators\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\ProfilePages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\EventsPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Effects\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\EventsPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\ChallengesPages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\ChallengesPagesViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)DependencyServices\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:effects="clr-namespace:Cheeteye.Effects"
+             x:Class="Cheeteye.Views.EventsContentView">
+    <ContentView.Content>
+        <Grid>
+            <ffimageloading:CachedImage Grid.Row="0"
+                        HorizontalOptions="FillAndExpand" 
+                        VerticalOptions="FillAndExpand" Aspect="AspectFill"
+                        Source = "backgroundApp.png"/>
+
+            <ScrollView Grid.Row="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="85*" />
+                    </Grid.RowDefinitions>
+                    <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" 
+                            VerticalOptions="FillAndExpand" Aspect="AspectFill"
+                            Source = "headerBling.png"/>
+                    <StackLayout Grid.Row="1" Spacing="0" Margin="0,5,0,0" >
+                        
+                        <Label Text="EVENTS" Style="{StaticResource TitleLabelStyle}" HorizontalTextAlignment="Center" />
+
+                        <StackLayout Orientation="Vertical" Margin="20,15,20,0" HeightRequest="50" Spacing="0">
+                            <controls:CustomFrame CornerRadius="5" Padding="2"
+                                    StartColor="{StaticResource ButtonStartBackColor}" 
+                                    EndColor="{StaticResource ButtonEndBackColor}"
+                                    HasShadow="true" 
+                                    ShadowColor="{StaticResource OutlineColor}" 
+                                    HeightRequest="50" HorizontalOptions="FillAndExpand">
+                                <StackLayout Orientation="Horizontal" VerticalOptions="Center" Padding="10">
+                                    <Label Text="LATEST" Style="{StaticResource BoldLabelStyle}" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand">
+                                        <Label.Effects>
+                                            <effects:ShadowEffect>
+                                                <effects:ShadowEffect.Radius>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS" Value="2" />
+                                                        <On Platform="Android" Value="4" />
+                                                    </OnPlatform>
+                                                </effects:ShadowEffect.Radius> 
+                                                <effects:ShadowEffect.Color>
+                                                    <OnPlatform x:TypeArguments="Color">
+                                                        <On Platform="iOS" Value="Black" />
+                                                        <On Platform="Android" Value="Black" />
+                                                    </OnPlatform>
+                                                </effects:ShadowEffect.Color>
+                                                <effects:ShadowEffect.DistanceX>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS" Value="-1" />
+                                                        <On Platform="Android" Value="-4" />
+                                                    </OnPlatform>
+                                                </effects:ShadowEffect.DistanceX> 
+                                                <effects:ShadowEffect.DistanceY>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="iOS" Value="1" />
+                                                        <On Platform="Android" Value="5" />
+                                                    </OnPlatform>
+                                                </effects:ShadowEffect.DistanceY>
+                                            </effects:ShadowEffect>
+                                        </Label.Effects>
+                                    </Label>    
+                                    <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                                    Aspect="AspectFit" HorizontalOptions="End" WidthRequest="20" HeightRequest="20"
+                                    Source = "uiDropdown.png"/>
+                                </StackLayout>
+                            </controls:CustomFrame>
+                        </StackLayout>
+
+                        <!--Events-->
+                        <ListView x:Name="listView" ItemsSource="{Binding Events}" RowHeight="250" 
+                                  BackgroundColor="Transparent" SeparatorVisibility="None">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <Grid RowSpacing="0" Margin="20,20,20,10">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="110"/>
+                                                <RowDefinition Height="39"/>
+                                                <RowDefinition Height="8"/>
+                                                <RowDefinition Height="80"/>
+                                            </Grid.RowDefinitions>
+                                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                                                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                                DownsampleToViewSize="true" Aspect="Fill"
+                                                Source = "{Binding BannerUrl}"/>
+
+                                            <Grid Grid.Row="2" Grid.RowSpan="2" BackgroundColor="White">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="20*"/>
+                                                    <ColumnDefinition Width="80*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <BoxView HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                                     Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                                                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="3" VerticalOptions="Center">
+                                                    <Label Text="{Binding Month}" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="{Binding Day}" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalTextAlignment="Center" FontSize="22"/>
+                                                </StackLayout>
+                                                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="3" VerticalOptions="Center">
+                                                    <Label Text="{Binding Subject}" Style="{StaticResource BoldLabelStyle}" FontSize="20" TextColor="Black"/>
+                                                    <Label Text="{Binding Duration}" Style="{StaticResource NormalLabelStyle}" TextColor="Black" FontSize="15"/>
+                                                </StackLayout>
+                                            </Grid>
+
+                                            <ffimageloading:CachedImage Grid.Row="1" Grid.RowSpan="2" HeightRequest="80" WidthRequest="50"
+                                                HorizontalOptions="End" DownsampleToViewSize="true" Aspect="AspectFill" Margin="0,0,10,0"
+                                                Source = "uiDefaultCalendar.png"/>
+
+                                            <Grid.GestureRecognizers>
+                                                 <TapGestureRecognizer Command="{Binding Path=BindingContext.SelectEventCommand, Source = {x:Reference listView}}"
+                                                        CommandParameter="{Binding}"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                        <!--St. Patricks Day-->
+                        <!-- <Grid RowSpacing="0" Margin="20,20,20,10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="110"/>
+                                <RowDefinition Height="39"/>
+                                <RowDefinition Height="8"/>
+                                <RowDefinition Height="80"/>
+                            </Grid.RowDefinitions>
+                            <ffimageloading:CachedImage Grid.Row="0" Grid.RowSpan="2"
+                                HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                DownsampleToViewSize="true" Aspect="Fill"
+                                Source = "eventMay23.png"/>
+
+                            <Grid Grid.Row="2" Grid.RowSpan="2" BackgroundColor="White">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20*"/>
+                                    <ColumnDefinition Width="80*"/>
+                                </Grid.ColumnDefinitions>
+                                <BoxView HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                     Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                                <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="3" VerticalOptions="Center">
+                                    <Label Text="May" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalTextAlignment="Center"/>
+                                    <Label Text="23" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalTextAlignment="Center" FontSize="22"/>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" Grid.Row="1" Grid.Column="1" Margin="3" VerticalOptions="Center">
+                                    <Label Text="St. Pactrick's Day Bash" Style="{StaticResource BoldLabelStyle}" FontSize="20" TextColor="Black"/>
+                                    <Label Text="7-11 pm" Style="{StaticResource NormalLabelStyle}" TextColor="Black" FontSize="15"/>
+                                </StackLayout>
+                            </Grid>
+
+                            <ffimageloading:CachedImage Grid.Row="1" Grid.RowSpan="2" HeightRequest="80" WidthRequest="50"
+                                HorizontalOptions="End" DownsampleToViewSize="true" Aspect="AspectFill" Margin="0,0,10,0"
+                                Source = "uiDefaultCalendar.png"/>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding EventDetailCommand}" CommandParameter="{Binding PatrickParameter}"/>
+                            </Grid.GestureRecognizers>
+                        </Grid>-->
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

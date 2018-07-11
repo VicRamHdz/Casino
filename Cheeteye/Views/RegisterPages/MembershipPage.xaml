@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.MembershipPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Margin="20,10,20,10">
+                    <Label Text="First Name" Style="{StaticResource NormalLabelStyle}" Margin="0,20,0,0" />
+                    <Entry Text="{Binding Model.FirstName}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="16" HorizontalOptions="FillAndExpand" Keyboard="Text" HeightRequest="40" />
+                    
+                    <Label Text="Last Name" Style="{StaticResource NormalLabelStyle}" Margin="0,20,0,0" />
+                    <Entry Text="{Binding Model.LastName}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="16" HorizontalOptions="FillAndExpand" Keyboard="Text" HeightRequest="40" />
+
+                    <Label Text="Membership Number" Style="{StaticResource NormalLabelStyle}" Margin="0,20,0,0"/>
+                    <Entry Text="{Binding Model.MembershipNumber}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="16" HorizontalOptions="FillAndExpand" Keyboard="Numeric" HeightRequest="40" />
+
+                    <Label Text="Email Address" Style="{StaticResource NormalLabelStyle}" Margin="0,20,0,0"/>
+                    <Entry Text="{Binding Model.Email}" TextColor="{StaticResource LightTextColor}"
+                           FontSize="16" HorizontalOptions="FillAndExpand" Keyboard="Email" HeightRequest="40" />
+                    
+                </StackLayout>
+                <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,0,0,20">
+                        <Label Text="Already have an account?" Style="{StaticResource NormalLabelStyle}" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+                        <Label Text="Login Now" Style="{StaticResource BoldLabelStyle}" TextColor="{StaticResource ButtonStartBackColor}" HorizontalOptions="Center" VerticalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding LoginNowCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>    
+                    </StackLayout>
+                    <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                    <controls:CustomGradientButton Text="NEXT" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0"
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding NextCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

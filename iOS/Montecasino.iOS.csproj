@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7612401E-B44E-46FE-8D65-447B006DD7D5}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Cheeteye.iOS</RootNamespace>
+    <AssemblyName>Cheeteye.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>20491</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <MtouchFloat32>true</MtouchFloat32>
+<AssemblyName>Montecasino.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Carlos Rodriguez (NL5N4D5SF7)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+<CodesignProvision>MontecasinoProvisioning</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Carlos Rodriguez (NL5N4D5SF7)</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>CheeteyeProvisioning</CodesignProvision>
+<AssemblyName>Montecasino.iOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Carlos Rodriguez (NL5N4D5SF7)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>37005</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision>MontecasinoProvisioning</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="HockeySDK">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\Xamarin.iOS10\HockeySDK.dll</HintPath>
+    </Reference>
+    <Reference Include="HockeySDK.iOSBindings">
+      <HintPath>..\packages\HockeySDK.Xamarin.5.1.2\lib\Xamarin.iOS10\HockeySDK.iOSBindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism">
+      <HintPath>..\packages\Prism.Core.6.3.0\lib\Xamarin.iOS10\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Forms">
+      <HintPath>..\packages\Prism.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\packages\Unity.4.0.1\lib\portable-net45+wp80+win8+wpa81+MonoAndroid10+MonoTouch10\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Forms">
+      <HintPath>..\packages\Prism.Unity.Forms.6.3.0\lib\Xamarin.iOS1.0\Prism.Unity.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.Support.iOS">
+      <HintPath>..\packages\Acr.Support.2.1.0\lib\Xamarin.iOS10\Acr.Support.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.5\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Splat">
+      <HintPath>..\packages\Splat.2.0.0\lib\Xamarin.iOS10\Splat.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs.Interface">
+      <HintPath>..\packages\Acr.UserDialogs.6.5.1\lib\Xamarin.iOS10\Acr.UserDialogs.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.CarouselView">
+      <HintPath>..\packages\Xamarin.Forms.CarouselView.2.3.0-pre2\lib\Xamarin.iOS10\Xamarin.Forms.CarouselView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.UserDialogs">
+      <HintPath>..\packages\Acr.UserDialogs.6.5.1\lib\Xamarin.iOS10\Acr.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.4\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Svg.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Forms">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.Forms.2.2.20\lib\Xamarin.iOS10\FFImageLoading.Svg.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Plugin.Permissions.Abstractions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Permissions">
+      <HintPath>..\packages\Plugin.Permissions.2.2.1\lib\Xamarin.iOS10\Plugin.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.59.1\lib\XamariniOS\SkiaSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Renderer\" />
+    <Folder Include="Resources\Fonts\" />
+    <Folder Include="Effects\" />
+    <Folder Include="DependencyServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Renderer\CustomEntryGlobalRenderer.cs" />
+    <Compile Include="Renderer\CustomGradientButtonRenderer.cs" />
+    <Compile Include="Renderer\CustomFrameRenderer.cs" />
+    <Compile Include="Renderer\CustomEntryRenderer.cs" />
+    <Compile Include="Renderer\CustomSwitchRenderer.cs" />
+    <Compile Include="Renderer\CustomPickerRenderer.cs" />
+    <Compile Include="Effects\LabelShadowEffect.cs" />
+    <Compile Include="DependencyServices\DeviceInformation.cs" />
+    <Compile Include="DependencyServices\CalendarInformation.cs" />
+    <Compile Include="AppMain.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\loginheader.png" />
+    <BundleResource Include="Resources\goldstart.png" />
+    <BundleResource Include="Resources\logo.png" />
+    <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="Resources\arrowhite.svg" />
+    <BundleResource Include="Resources\roller.png" />
+    <BundleResource Include="Resources\easter.png" />
+    <BundleResource Include="Resources\points.png" />
+    <BundleResource Include="Resources\pointsgray.png" />
+    <BundleResource Include="Resources\rewards.png" />
+    <BundleResource Include="Resources\rewardsgray.png" />
+    <BundleResource Include="Resources\special1.png" />
+    <BundleResource Include="Resources\special2.png" />
+    <BundleResource Include="Resources\special3.png" />
+    <BundleResource Include="Resources\special4.png" />
+    <BundleResource Include="Resources\special5.png" />
+    <BundleResource Include="Resources\specials.png" />
+    <BundleResource Include="Resources\specialsgray.png" />
+    <BundleResource Include="Resources\cubes.png" />
+    <BundleResource Include="Resources\backgroundLoading%403x.png" />
+    <BundleResource Include="Resources\backgroundLoading%402x.png" />
+    <BundleResource Include="Resources\backgroundLoading.png" />
+    <BundleResource Include="Resources\logo%403x.png" />
+    <BundleResource Include="Resources\logo%402x.png" />
+    <BundleResource Include="Resources\backgroundApp.png" />
+    <BundleResource Include="Resources\backgroundApp%402x.png" />
+    <BundleResource Include="Resources\backgroundApp%403x.png" />
+    <BundleResource Include="Resources\arrowyellow.svg" />
+    <BundleResource Include="Resources\Fonts\RobotoCondensed-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Fonts\RobotoCondensed-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Fonts\SpectralSC-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\headerBling.png" />
+    <BundleResource Include="Resources\headerBling%402x.png" />
+    <BundleResource Include="Resources\headerBling%403x.png" />
+    <BundleResource Include="Resources\uiBack.png" />
+    <BundleResource Include="Resources\uiBack%402x.png" />
+    <BundleResource Include="Resources\uiBack%403x.png" />
+    <BundleResource Include="Resources\uiNext.png" />
+    <BundleResource Include="Resources\uiNext%402x.png" />
+    <BundleResource Include="Resources\uiNext%403x.png" />
+    <BundleResource Include="Resources\uiNavDefaultChallenges.png" />
+    <BundleResource Include="Resources\uiNavDefaultChallenges%402x.png" />
+    <BundleResource Include="Resources\uiNavDefaultChallenges%403x.png" />
+    <BundleResource Include="Resources\uiNavDefaultEvents.png" />
+    <BundleResource Include="Resources\uiNavDefaultEvents%402x.png" />
+    <BundleResource Include="Resources\uiNavDefaultEvents%403x.png" />
+    <BundleResource Include="Resources\uiNavDefaultPoints.png" />
+    <BundleResource Include="Resources\uiNavDefaultPoints%402x.png" />
+    <BundleResource Include="Resources\uiNavDefaultPoints%403x.png" />
+    <BundleResource Include="Resources\uiNavDefaultRewards.png" />
+    <BundleResource Include="Resources\uiNavDefaultRewards%402x.png" />
+    <BundleResource Include="Resources\uiNavDefaultRewards%403x.png" />
+    <BundleResource Include="Resources\uiNavActiveRewards.png" />
+    <BundleResource Include="Resources\uiNavActiveRewards%402x.png" />
+    <BundleResource Include="Resources\uiNavActiveRewards%403x.png" />
+    <BundleResource Include="Resources\uiNavActivePoints.png" />
+    <BundleResource Include="Resources\uiNavActivePoints%402x.png" />
+    <BundleResource Include="Resources\uiNavActivePoints%403x.png" />
+    <BundleResource Include="Resources\uiNavActiveEvents.png" />
+    <BundleResource Include="Resources\uiNavActiveEvents%402x.png" />
+    <BundleResource Include="Resources\uiNavActiveEvents%403x.png" />
+    <BundleResource Include="Resources\uiNavActiveChallenges.png" />
+    <BundleResource Include="Resources\uiNavActiveChallenges%402x.png" />
+    <BundleResource Include="Resources\uiNavActiveChallenges%403x.png" />
+    <BundleResource Include="Resources\eventMay05.png" />
+    <BundleResource Include="Resources\eventMay05%402x.png" />
+    <BundleResource Include="Resources\eventMay05%403x.png" />
+    <BundleResource Include="Resources\uiCalendar.png" />
+    <BundleResource Include="Resources\uiCalendar%402x.png" />
+    <BundleResource Include="Resources\uiCalendar%403x.png" />
+    <BundleResource Include="Resources\uiCalendarCircule.png" />
+    <BundleResource Include="Resources\uiCalendarCircule%402x.png" />
+    <BundleResource Include="Resources\uiCalendarCircule%403x.png" />
+    <BundleResource Include="Resources\uiCheck.png" />
+    <BundleResource Include="Resources\uiCheck%402x.png" />
+    <BundleResource Include="Resources\uiCheck%403x.png" />
+    <BundleResource Include="Resources\uiDefaultCalendar.png" />
+    <BundleResource Include="Resources\uiDefaultCalendar%402x.png" />
+    <BundleResource Include="Resources\uiDefaultCalendar%403x.png" />
+    <BundleResource Include="Resources\uiDropdown.png" />
+    <BundleResource Include="Resources\uiDropdown%402x.png" />
+    <BundleResource Include="Resources\uiDropdown%403x.png" />
+    <BundleResource Include="Resources\uiFive.png" />
+    <BundleResource Include="Resources\uiFive%402x.png" />
+    <BundleResource Include="Resources\uiFive%403x.png" />
+    <BundleResource Include="Resources\uiFour.png" />
+    <BundleResource Include="Resources\uiFour%402x.png" />
+    <BundleResource Include="Resources\uiFour%403x.png" />
+    <BundleResource Include="Resources\uiOne.png" />
+    <BundleResource Include="Resources\uiOne%402x.png" />
+    <BundleResource Include="Resources\uiOne%403x.png" />
+    <BundleResource Include="Resources\uiThree.png" />
+    <BundleResource Include="Resources\uiThree%402x.png" />
+    <BundleResource Include="Resources\uiThree%403x.png" />
+    <BundleResource Include="Resources\uiTick.png" />
+    <BundleResource Include="Resources\uiTick%402x.png" />
+    <BundleResource Include="Resources\uiTick%403x.png" />
+    <BundleResource Include="Resources\uiTwo.png" />
+    <BundleResource Include="Resources\uiTwo%402x.png" />
+    <BundleResource Include="Resources\uiTwo%403x.png" />
+    <BundleResource Include="Resources\eventMay23.png" />
+    <BundleResource Include="Resources\eventMay23%402x.png" />
+    <BundleResource Include="Resources\eventMay23%403x.png" />
+    <BundleResource Include="Resources\challengeFrequentRollerDeeper.png" />
+    <BundleResource Include="Resources\challengeFrequentRollerDeeper%402x.png" />
+    <BundleResource Include="Resources\challengeFrequentRollerDeeper%403x.png" />
+    <BundleResource Include="Resources\uiNavActiveProfile.svg" />
+    <BundleResource Include="Resources\uiNavDefaultProfile.svg" />
+    <BundleResource Include="Resources\splash.png" />
+    <BundleResource Include="Resources\Fonts\BEBAS.ttf" />
+  </ItemGroup>
+  <Import Project="..\Cheeteye\Cheeteye.projitems" Label="Shared" Condition="Exists('..\Cheeteye\Cheeteye.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
+</Project>

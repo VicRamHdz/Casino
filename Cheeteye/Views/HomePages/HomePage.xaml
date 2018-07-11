@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:controls="clr-namespace:Cheeteye.Controls"
+    xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    x:Class="Cheeteye.Views.HomePage">
+	<ContentPage.Content>
+        <controls:CustomTabPage ButtonsPosition="Down" IconPosition="Up" 
+        TitleFontSize="8" TitleFontAttributes="Bold" 
+        StartBackgroundColor="{StaticResource ButtonTabStartBackColor}"
+        EndBackgroundColor="{StaticResource ButtonTabEndBackColor}"
+        FullUnderlineColor="{StaticResource OutlineColor}"
+        StartActiveBackgroundColor="{StaticResource ButtonTabStartActiveBackColor}"
+        EndActiveBackgroundColor="{StaticResource ButtonTabEndActiveBackColor}"
+        TitleTextColor="White" TitleActiveTextColor="{StaticResource PrimaryTextColor}"
+        Pages="{Binding Pages}" VerticalOptions="FillAndExpand"/>
+	</ContentPage.Content>
+</ContentPage>

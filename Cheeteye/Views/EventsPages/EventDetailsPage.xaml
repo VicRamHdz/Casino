@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:Cheeteye.Controls"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True" 
+             BackgroundImage="backgroundApp"
+             ControlTemplate="{StaticResource CustomNavigationTemplate}"
+             x:Class="Cheeteye.Views.EventDetailsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Grid RowSpacing="0" Margin="20,20,20,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ffimageloading:CachedImage Grid.Row="0"
+                            HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            DownsampleToViewSize="true" Aspect="Fill"
+                            Source = "{Binding Event.BannerUrl}"/>
+
+                        <Grid Grid.Row="1" BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <BoxView HorizontalOptions="FillAndExpand" Grid.Row="0"
+                                 Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                            <StackLayout Orientation="Vertical" Grid.Row="1" Margin="15" VerticalOptions="Center">
+                                <Label Text="{Binding Event.Subject}" Style="{StaticResource BoldLabelStyle}" FontSize="20" TextColor="Black"/>
+                                <Label Text="{Binding Event.DateHour}" Style="{StaticResource BoldLabelStyle}" 
+                                       TextColor="{StaticResource ButtonStartBackColor}" FontSize="15"/>
+                                <Label Text="{Binding Event.Description}"
+                                       Style="{StaticResource NormalLabelStyle}" TextColor="Black" FontSize="16"/>
+                            </StackLayout>
+                        </Grid>
+                    </Grid>
+                </StackLayout>
+            </ScrollView>  
+            <StackLayout Spacing="0" VerticalOptions="EndAndExpand">
+                <BoxView HorizontalOptions="FillAndExpand" Color="{StaticResource OutlineColor}" HeightRequest="1"/>
+                <controls:CustomGradientButton Text="BOOK NOW" 
+                            TextColor="{StaticResource LightTextColor}"
+                            StartColor="{StaticResource ButtonStartBackColor}" 
+                            EndColor="{StaticResource ButtonEndBackColor}"
+                            HeightRequest="50" BorderRadius="0" 
+                            Style="{StaticResource BoldButtonStyle}"
+                            VerticalOptions="EndAndExpand"
+                            HorizontalOptions="FillAndExpand" 
+                            Command="{Binding BookNowCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
